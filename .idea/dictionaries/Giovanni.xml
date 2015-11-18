@@ -3,9 +3,16 @@
     <words>
       <w>aggiunta</w>
       <w>alpa</w>
+      <w>altre</w>
+      <w>altrimenti</w>
+      <w>andare</w>
       <w>animazione</w>
+      <w>attivare</w>
+      <w>avanti</w>
       <w>barra</w>
       <w>breakname</w>
+      <w>buchi</w>
+      <w>cadere</w>
       <w>caduta</w>
       <w>catenaria</w>
       <w>cbuf</w>
@@ -26,6 +33,9 @@
       <w>creata</w>
       <w>creazione</w>
       <w>dello</w>
+      <w>dentro</w>
+      <w>deve</w>
+      <w>devono</w>
       <w>dfase</w>
       <w>diametro</w>
       <w>dopo</w>
@@ -33,15 +43,19 @@
       <w>dumpascript</w>
       <w>dumpasetup</w>
       <w>durata</w>
+      <w>elementi</w>
       <w>endframe</w>
       <w>esecuzione</w>
+      <w>essere</w>
       <w>estrude</w>
       <w>estrudibarra</w>
       <w>estrudibarre</w>
       <w>eulerangles</w>
+      <w>facciamo</w>
       <w>ferri</w>
       <w>ferro</w>
       <w>ferromaker</w>
+      <w>fila</w>
       <w>framemovimento</w>
       <w>framemovimentocatenaria</w>
       <w>framemovimentoferri</w>
@@ -55,8 +69,10 @@
       <w>inizializza</w>
       <w>inizializzasetup</w>
       <w>inizializzato</w>
+      <w>inserire</w>
       <w>intero</w>
       <w>invia</w>
+      <w>invisibile</w>
       <w>lanciare</w>
       <w>lasciagriglia</w>
       <w>lavorazione</w>
@@ -67,9 +83,14 @@
       <w>lunghezze</w>
       <w>macchina</w>
       <w>maxscript</w>
+      <w>messi</w>
+      <w>mettere</w>
+      <w>mostrare</w>
       <w>muove</w>
+      <w>nella</w>
       <w>numeroferri</w>
       <w>numerotrasportatori</w>
+      <w>ombra</w>
       <w>optime</w>
       <w>outputfilebuf</w>
       <w>outputsetup</w>
@@ -77,6 +98,7 @@
       <w>parametri</w>
       <w>parte</w>
       <w>passframes</w>
+      <w>passi</w>
       <w>passseconds</w>
       <w>perche</w>
       <w>posa</w>
@@ -84,7 +106,9 @@
       <w>posaferri</w>
       <w>posare</w>
       <w>posizionamento</w>
+      <w>potere</w>
       <w>prima</w>
+      <w>questo</w>
       <w>raggio</w>
       <w>raggiobarra</w>
       <w>relativo</w>
@@ -98,12 +122,17 @@
       <w>ruota</w>
       <w>sbarra</w>
       <w>sbarre</w>
+      <w>scalare</w>
       <w>schnell</w>
       <w>scrittura</w>
       <w>scrive</w>
       <w>secondi</w>
       <w>secondsno</w>
       <w>secstoframes</w>
+      <w>selezione</w>
+      <w>sempre</w>
+      <w>senza</w>
+      <w>sequenza</w>
       <w>setbreak</w>
       <w>setbreakpoint</w>
       <w>setbreaks</w>
@@ -113,12 +142,15 @@
       <w>setzonacorrente</w>
       <w>simulazione</w>
       <w>singolo</w>
+      <w>speciale</w>
       <w>spessore</w>
       <w>spessoresbarra</w>
       <w>spostacarrellofinale</w>
       <w>spostacarrellosuposamanuale</w>
       <w>spostacarrellosusaldatori</w>
+      <w>spostacatenaria</w>
       <w>spostamento</w>
+      <w>spostare</w>
       <w>sputaferri</w>
       <w>sputaferro</w>
       <w>startframe</w>
@@ -133,6 +165,7 @@
       <w>uguale</w>
       <w>varie</w>
       <w>verra</w>
+      <w>vuoto</w>
       <w>zona</w>
       <w>zonacorrente</w>
     </words>

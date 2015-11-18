@@ -23,5 +23,13 @@ class SputaFerri(object):
         s = "foo.position = $hlp_origine_sbarre.position"
         commandsbuf.append(s)
 
+        # nel caso l'altezza del ferro sia 1 si deve attivare un trigger speciale
+        # questo ferro sara' invisibile
+        # lo facciamo perche' nella fila di ferri messi dentro ci devono potere essere buchi
+
+        if altezza == 1:
+            s = "foo.visibility = 0.0"
+            commandsbuf.append(s)
+
         # ritorno della lista
         return commandsbuf

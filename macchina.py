@@ -14,7 +14,7 @@ class Macchina(macchinainterface.MacchinaInterface):
         self.timer1.fps = 25
 
         # parametri della simulazione
-        self.numeroferri = 5  # numero di ferri massimo in un settore
+        self.numeroferri = 10  # numero di ferri massimo in un settore
         self.risoluzione = 20.0  # la risoluzione della macchina
         self.spessoresbarra = 2.0  # lo spessore della sbarra
         self.zonacorrente = 1  # la zona corrente di lavorazione (1-4 superiori, 5-8 inferiori)
@@ -99,7 +99,7 @@ class Macchina(macchinainterface.MacchinaInterface):
         """
         estrude piu barre con un solo comando
         se il valore di lunghezza e' uguale a 0 la sbarra non verra' creata
-        :param lunghezze: lista contenente le varie lunghezze
+        :param lunghezze: lista contenente le varie lunghezze (inserire 1 per non mettere una sbarra in sequenza)
         :return:
         """
         contatore = 1
@@ -121,3 +121,20 @@ class Macchina(macchinainterface.MacchinaInterface):
 
         tempoesecuzione = self.posaferri.optime * self.numeroferri
         self.timer1.passseconds(tempoesecuzione)
+        print self.timer1.endframe
+
+    def spostacatenaria(self, passi):
+        """
+        invia al wrapper posaferri il comando di spostare la catenaria di n passi
+        :param passi:
+        :return:
+        """
+        c = self.posaferri.spostacatenaria(passi, self.zonacorrente, self.timer1.endframe + 1, self.timer1.fps)
+        self.outputfilebuf.extend(c)
+
+        # calcolo del tempo di esecuzione a aggiornamento del timer
+
+        tempoesecuzione = (self.posaferri.optime - 1) * passi
+        self.timer1.passseconds(tempoesecuzione)
+        self.timer1.endframe += 1
+        print self.timer1.endframe

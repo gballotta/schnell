@@ -46,3 +46,37 @@ class PosaFerri(object):
             cframe += 1
 
         return cbuf
+
+    def spostacatenaria(self, passi, settore, framestart, fps):
+        """
+        genera i comandi d'animazione per spostare la catenaria di n passi senza far cadere ferri
+        :param passi: numero di passi a vuoto
+        :param settore:
+        :param framestart: il frame di partenza dell'animazione
+        :param fps: frames per second
+        :return: lista di comandi
+        """
+
+        cbuf = []  # buffer dei comandi da ritornare
+
+        # settaggio frame durata spostamento
+        framemovimentocatenaria = int((self.optime - 1) * fps) - 1
+
+        # selezione catenaria e ferri
+        cbuf.append("select $catenaria")
+        s = "selectMore $sbarra_%s*" % settore
+        cbuf.append(s)
+
+        # spostamento elementi
+
+        cframe = framestart
+        cbuf.append("maxOps.setDefaultTangentType #slow #slow")  # la catenaria si muove smooth
+        s = "at time %s animate on move $ [0, 0, 0]" % cframe
+        cbuf.append(s)
+        framemovimentocatenaria = int((self.optime - 1) * fps)
+        cframe += framemovimentocatenaria * passi - 1
+        s = "at time %s animate on move $ [0, -%s, 0]" % (cframe, passi * self.risoluzione)
+        cbuf.append(s)
+        cframe += 1
+
+        return cbuf
