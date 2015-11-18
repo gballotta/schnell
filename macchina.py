@@ -1,5 +1,6 @@
 import macchinainterface
-import sputaferri, posaferri
+import sputaferri
+import posaferri
 import anitimer.anitimer
 
 
@@ -27,7 +28,7 @@ class Macchina(macchinainterface.MacchinaInterface):
 
         # posaferri (PSF)
         self.posaferri = posaferri.PosaFerri(self.risoluzione, self.numeroferri)
-        self.posaferri.optime = 2.0  # settaggio velocita della posa di un singolo ferro
+        self.posaferri.optime = 3.0  # settaggio velocita della posa di un singolo ferro
 
     def setzonacorrente(self, zonacorrente):
         """
@@ -66,6 +67,17 @@ class Macchina(macchinainterface.MacchinaInterface):
         :return:
         """
         f = open(self.outputfile, 'w')
+
+        # scrittura della parte di setup
+
+        self.inizializzasetup()  # il setup va inizializzato dopo perche' serve l'animazione completa
+
+        for i in self.outputsetupbuf:
+            siringa = i + '\n'
+            f.write(siringa)
+
+        # scrittura dello script
+
         for i in self.outputfilebuf:
             siringa = i + '\n'
             f.write(siringa)
@@ -104,3 +116,8 @@ class Macchina(macchinainterface.MacchinaInterface):
         """
         c = self.posaferri.posa(settore, self.timer1.endframe, self.timer1.fps)
         self.outputfilebuf.extend(c)
+
+        # calcolo del tempo di esecuzione a aggiornamento del timer
+
+        tempoesecuzione = self.posaferri.optime * self.numeroferri
+        self.timer1.passseconds(tempoesecuzione)

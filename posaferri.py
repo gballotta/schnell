@@ -14,13 +14,13 @@ class PosaFerri(object):
         """
         cbuf = []
         cframe = framestart
-        framemovimento = int(self.optime / 2 * fps) - 1
-        # spostamento della catenaria selectMore
+        framemovimentocatenaria = int((self.optime - 1) * fps) - 1
+        framemovimentoferri = int(fps - 1)
 
-        # settaggio curve di transizioni per le chiavi
-        cbuf.append("maxOps.setDefaultTangentType #slow #slow")
+        # spostamento della catenaria
 
         for i in range(1, (self.numeroferri + 1)):
+            cbuf.append("maxOps.setDefaultTangentType #slow #slow")  # la catenaria si muove smooth
             cbuf.append("select $catenaria")
             if i is not 1:
                 for j in range(1, i):
@@ -28,7 +28,7 @@ class PosaFerri(object):
                     cbuf.append(s)
             s = "at time %s animate on move $ [0, 0, 0]" % cframe
             cbuf.append(s)
-            cframe += framemovimento
+            cframe += framemovimentocatenaria
             s = "at time %s animate on move $ [0, -%s, 0]" % (cframe, self.risoluzione)
             cbuf.append(s)
             cframe += 1
@@ -39,7 +39,8 @@ class PosaFerri(object):
             cbuf.append(s)
             s = "at time %s animate on move $ [0, 0, 0]" % cframe
             cbuf.append(s)
-            cframe += framemovimento
+            cframe += framemovimentoferri
+            cbuf.append("maxOps.setDefaultTangentType #slow #linear")  # il ferro si muove linear
             s = "at time %s animate on $.position = $hlp_sbarre_origine_catenaria.position" % cframe
             cbuf.append(s)
             cframe += 1

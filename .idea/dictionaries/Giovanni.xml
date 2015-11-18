@@ -11,9 +11,11 @@
       <w>cbuf</w>
       <w>centimetri</w>
       <w>cframe</w>
+      <w>chiavi</w>
       <w>cilindro</w>
       <w>cino</w>
       <w>commandsbuf</w>
+      <w>completa</w>
       <w>connetti</w>
       <w>contatore</w>
       <w>contenente</w>
@@ -23,13 +25,16 @@
       <w>creare</w>
       <w>creata</w>
       <w>creazione</w>
+      <w>dello</w>
       <w>dfase</w>
       <w>diametro</w>
+      <w>dopo</w>
       <w>dumpare</w>
       <w>dumpascript</w>
       <w>dumpasetup</w>
       <w>durata</w>
       <w>endframe</w>
+      <w>esecuzione</w>
       <w>estrude</w>
       <w>estrudibarra</w>
       <w>estrudibarre</w>
@@ -38,6 +43,8 @@
       <w>ferro</w>
       <w>ferromaker</w>
       <w>framemovimento</w>
+      <w>framemovimentocatenaria</w>
+      <w>framemovimentoferri</w>
       <w>framesno</w>
       <w>framestart</w>
       <w>generali</w>
@@ -47,6 +54,7 @@
       <w>inferiori</w>
       <w>inizializza</w>
       <w>inizializzasetup</w>
+      <w>inizializzato</w>
       <w>intero</w>
       <w>invia</w>
       <w>lanciare</w>
@@ -59,6 +67,7 @@
       <w>lunghezze</w>
       <w>macchina</w>
       <w>maxscript</w>
+      <w>muove</w>
       <w>numeroferri</w>
       <w>numerotrasportatori</w>
       <w>optime</w>
@@ -66,8 +75,10 @@
       <w>outputsetup</w>
       <w>outputsetupbuf</w>
       <w>parametri</w>
+      <w>parte</w>
       <w>passframes</w>
       <w>passseconds</w>
+      <w>perche</w>
       <w>posa</w>
       <w>posabarre</w>
       <w>posaferri</w>
@@ -88,6 +99,7 @@
       <w>sbarra</w>
       <w>sbarre</w>
       <w>schnell</w>
+      <w>scrittura</w>
       <w>scrive</w>
       <w>secondi</w>
       <w>secondsno</w>
@@ -111,8 +123,10 @@
       <w>sputaferro</w>
       <w>startframe</w>
       <w>superiori</w>
+      <w>tempoesecuzione</w>
       <w>temporizzatore</w>
       <w>totale</w>
+      <w>transizioni</w>
       <w>trasportabarre</w>
       <w>tredifase</w>
       <w>tutte</w>
