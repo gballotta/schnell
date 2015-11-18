@@ -14,10 +14,10 @@ class Macchina(macchinainterface.MacchinaInterface):
         self.timer1.fps = 25
 
         # parametri della simulazione
-        self.numeroferri = 10  # numero di ferri massimo in un settore
-        self.risoluzione = 20.0  # la risoluzione della macchina
-        self.spessoresbarra = 2.0  # lo spessore della sbarra
-        self.zonacorrente = 1  # la zona corrente di lavorazione (1-4 superiori, 5-8 inferiori)
+        self.numeroferri = 20  # numero di ferri massimo in un settore
+        self.risoluzione = 15.0  # la risoluzione della macchina
+        self.spessoresbarra = 1.0  # lo spessore della sbarra
+        self.zonacorrente = 1  # la zona corrente di lavorazione
 
         # buffers dei files di output
         self.outputfilebuf = []
@@ -130,6 +130,22 @@ class Macchina(macchinainterface.MacchinaInterface):
         :return:
         """
         c = self.posaferri.spostacatenaria(passi, self.zonacorrente, self.timer1.endframe + 1, self.timer1.fps)
+        self.outputfilebuf.extend(c)
+
+        # calcolo del tempo di esecuzione a aggiornamento del timer
+
+        tempoesecuzione = (self.posaferri.optime - 1) * passi
+        self.timer1.passseconds(tempoesecuzione)
+        self.timer1.endframe += 1
+        print self.timer1.endframe
+
+    def spostacatenariaindietro(self, passi):
+        """
+        invia al wrapper posaferri il comando di spostare la catenaria di n passi
+        :param passi:
+        :return:
+        """
+        c = self.posaferri.spostacatenariaindietro(passi, self.timer1.endframe + 1, self.timer1.fps)
         self.outputfilebuf.extend(c)
 
         # calcolo del tempo di esecuzione a aggiornamento del timer

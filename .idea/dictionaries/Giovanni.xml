@@ -10,6 +10,7 @@
       <w>attivare</w>
       <w>avanti</w>
       <w>barra</w>
+      <w>barrepasso</w>
       <w>breakname</w>
       <w>buchi</w>
       <w>cadere</w>
@@ -21,6 +22,7 @@
       <w>chiavi</w>
       <w>cilindro</w>
       <w>cino</w>
+      <w>cliente</w>
       <w>commandsbuf</w>
       <w>completa</w>
       <w>connetti</w>
@@ -87,6 +89,7 @@
       <w>mettere</w>
       <w>mostrare</w>
       <w>muove</w>
+      <w>muovere</w>
       <w>nella</w>
       <w>numeroferri</w>
       <w>numerotrasportatori</w>
@@ -113,6 +116,7 @@
       <w>raggiobarra</w>
       <w>relativo</w>
       <w>resettacarrello</w>
+      <w>resettarla</w>
       <w>richiesta</w>
       <w>risoluzione</w>
       <w>ritorna</w>
@@ -142,13 +146,16 @@
       <w>setzonacorrente</w>
       <w>simulazione</w>
       <w>singolo</w>
+      <w>solamente</w>
       <w>speciale</w>
       <w>spessore</w>
       <w>spessoresbarra</w>
+      <w>sposta</w>
       <w>spostacarrellofinale</w>
       <w>spostacarrellosuposamanuale</w>
       <w>spostacarrellosusaldatori</w>
       <w>spostacatenaria</w>
+      <w>spostacatenariaindietro</w>
       <w>spostamento</w>
       <w>spostare</w>
       <w>sputaferri</w>
