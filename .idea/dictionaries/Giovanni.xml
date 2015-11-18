@@ -1,32 +1,108 @@
 <component name="ProjectDictionaryState">
   <dictionary name="Giovanni">
     <words>
+      <w>aggiunta</w>
       <w>alpa</w>
+      <w>barra</w>
       <w>breakname</w>
+      <w>catenaria</w>
+      <w>centimetri</w>
+      <w>cilindro</w>
       <w>cino</w>
+      <w>commandsbuf</w>
+      <w>connetti</w>
+      <w>contatore</w>
+      <w>contenente</w>
+      <w>corrente</w>
+      <w>creabarra</w>
+      <w>creare</w>
+      <w>creazione</w>
+      <w>dfase</w>
+      <w>diametro</w>
+      <w>dumpare</w>
+      <w>dumpascript</w>
+      <w>dumpasetup</w>
+      <w>durata</w>
       <w>endframe</w>
+      <w>estrude</w>
       <w>estrudibarra</w>
+      <w>estrudibarre</w>
+      <w>eulerangles</w>
+      <w>ferri</w>
+      <w>ferro</w>
+      <w>ferromaker</w>
       <w>framesno</w>
+      <w>framestart</w>
+      <w>generali</w>
       <w>getbreakpoint</w>
+      <w>heightsegs</w>
+      <w>impiegato</w>
+      <w>inferiori</w>
+      <w>inizializza</w>
+      <w>inizializzasetup</w>
+      <w>intero</w>
+      <w>invia</w>
+      <w>lanciare</w>
       <w>lasciagriglia</w>
+      <w>lavorazione</w>
+      <w>lista</w>
       <w>locazione</w>
+      <w>lunghezza</w>
       <w>lunghezzabarra</w>
+      <w>lunghezze</w>
       <w>macchina</w>
+      <w>maxscript</w>
       <w>numerotrasportatori</w>
+      <w>optime</w>
+      <w>outputfilebuf</w>
+      <w>outputsetup</w>
+      <w>outputsetupbuf</w>
+      <w>parametri</w>
       <w>passframes</w>
       <w>passseconds</w>
+      <w>posa</w>
+      <w>posizionamento</w>
+      <w>prima</w>
+      <w>raggio</w>
+      <w>raggiobarra</w>
+      <w>relativo</w>
       <w>resettacarrello</w>
+      <w>richiesta</w>
+      <w>ritorna</w>
+      <w>ritornare</w>
+      <w>rotazione</w>
+      <w>rotazionesbarra</w>
       <w>ruota</w>
+      <w>sbarra</w>
+      <w>sbarre</w>
+      <w>schnell</w>
+      <w>scrive</w>
+      <w>secondi</w>
       <w>secondsno</w>
       <w>secstoframes</w>
       <w>setbreak</w>
       <w>setbreakpoint</w>
       <w>setbreaks</w>
+      <w>setta</w>
+      <w>settore</w>
+      <w>setzonacorrente</w>
+      <w>simulazione</w>
+      <w>spessore</w>
+      <w>spessoresbarra</w>
       <w>spostacarrellofinale</w>
       <w>spostacarrellosuposamanuale</w>
       <w>spostacarrellosusaldatori</w>
+      <w>sputaferri</w>
+      <w>sputaferro</w>
       <w>startframe</w>
+      <w>superiori</w>
+      <w>temporizzatore</w>
+      <w>totale</w>
       <w>trasportabarre</w>
+      <w>tredifase</w>
+      <w>varie</w>
+      <w>zona</w>
+      <w>zonacorrente</w>
     </words>
   </dictionary>
 </component>
