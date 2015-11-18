@@ -4,3 +4,6 @@ class MacchinaInterface(object):
 
     def estrudibarra(self, altezza, fid, framestart):
         pass
+
+    def estrudibarre(self, lunghezze):
+        pass

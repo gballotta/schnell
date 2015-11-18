@@ -3,10 +3,14 @@
     <words>
       <w>aggiunta</w>
       <w>alpa</w>
+      <w>animazione</w>
       <w>barra</w>
       <w>breakname</w>
+      <w>caduta</w>
       <w>catenaria</w>
+      <w>cbuf</w>
       <w>centimetri</w>
+      <w>cframe</w>
       <w>cilindro</w>
       <w>cino</w>
       <w>commandsbuf</w>
@@ -14,8 +18,10 @@
       <w>contatore</w>
       <w>contenente</w>
       <w>corrente</w>
+      <w>crea</w>
       <w>creabarra</w>
       <w>creare</w>
+      <w>creata</w>
       <w>creazione</w>
       <w>dfase</w>
       <w>diametro</w>
@@ -31,6 +37,7 @@
       <w>ferri</w>
       <w>ferro</w>
       <w>ferromaker</w>
+      <w>framemovimento</w>
       <w>framesno</w>
       <w>framestart</w>
       <w>generali</w>
@@ -52,6 +59,7 @@
       <w>lunghezze</w>
       <w>macchina</w>
       <w>maxscript</w>
+      <w>numeroferri</w>
       <w>numerotrasportatori</w>
       <w>optime</w>
       <w>outputfilebuf</w>
@@ -61,6 +69,9 @@
       <w>passframes</w>
       <w>passseconds</w>
       <w>posa</w>
+      <w>posabarre</w>
+      <w>posaferri</w>
+      <w>posare</w>
       <w>posizionamento</w>
       <w>prima</w>
       <w>raggio</w>
@@ -68,6 +79,7 @@
       <w>relativo</w>
       <w>resettacarrello</w>
       <w>richiesta</w>
+      <w>risoluzione</w>
       <w>ritorna</w>
       <w>ritornare</w>
       <w>rotazione</w>
@@ -84,14 +96,17 @@
       <w>setbreakpoint</w>
       <w>setbreaks</w>
       <w>setta</w>
+      <w>settaggio</w>
       <w>settore</w>
       <w>setzonacorrente</w>
       <w>simulazione</w>
+      <w>singolo</w>
       <w>spessore</w>
       <w>spessoresbarra</w>
       <w>spostacarrellofinale</w>
       <w>spostacarrellosuposamanuale</w>
       <w>spostacarrellosusaldatori</w>
+      <w>spostamento</w>
       <w>sputaferri</w>
       <w>sputaferro</w>
       <w>startframe</w>
@@ -100,7 +115,10 @@
       <w>totale</w>
       <w>trasportabarre</w>
       <w>tredifase</w>
+      <w>tutte</w>
+      <w>uguale</w>
       <w>varie</w>
+      <w>verra</w>
       <w>zona</w>
       <w>zonacorrente</w>
     </words>

@@ -1,5 +1,5 @@
 import macchinainterface
-import sputaferri
+import sputaferri, posaferri
 import anitimer.anitimer
 
 
@@ -13,7 +13,9 @@ class Macchina(macchinainterface.MacchinaInterface):
         self.timer1.fps = 25
 
         # parametri della simulazione
-        self.spessoresbarra = 1.0  # lo spessore della sbarra
+        self.numeroferri = 5  # numero di ferri massimo in un settore
+        self.risoluzione = 20.0  # la risoluzione della macchina
+        self.spessoresbarra = 2.0  # lo spessore della sbarra
         self.zonacorrente = 1  # la zona corrente di lavorazione (1-4 superiori, 5-8 inferiori)
 
         # buffers dei files di output
@@ -22,6 +24,10 @@ class Macchina(macchinainterface.MacchinaInterface):
 
         # sputaferri (SPF)
         self.sputaferri = sputaferri.SputaFerri()
+
+        # posaferri (PSF)
+        self.posaferri = posaferri.PosaFerri(self.risoluzione, self.numeroferri)
+        self.posaferri.optime = 2.0  # settaggio velocita della posa di un singolo ferro
 
     def setzonacorrente(self, zonacorrente):
         """
@@ -73,8 +79,6 @@ class Macchina(macchinainterface.MacchinaInterface):
         :param framestart: frame di partenza
         :return:
         """
-        # aggiunta del tempo impiegato
-        self.timer1.passseconds(self.sputaferri.optime)
         # richiesta delle istruzioni
         c = self.sputaferri.sputaferro(self.spessoresbarra, altezza, self.zonacorrente, fid)
         self.outputfilebuf.extend(c)
@@ -82,10 +86,21 @@ class Macchina(macchinainterface.MacchinaInterface):
     def estrudibarre(self, lunghezze):
         """
         estrude piu barre con un solo comando
+        se il valore di lunghezza e' uguale a 0 la sbarra non verra' creata
         :param lunghezze: lista contenente le varie lunghezze
         :return:
         """
         contatore = 1
         for i in lunghezze:
-            self.estrudibarra(i, contatore, 0)
+            if i is not 0:
+                self.estrudibarra(i, contatore, 0)
             contatore += 1
+
+    def posabarre(self, settore):
+        """
+        invia al wrapper posaferri il comando di posare tutte le sbarre del settore
+        :param settore: il settore di sbarre da posare
+        :return:
+        """
+        c = self.posaferri.posa(settore, self.timer1.endframe, self.timer1.fps)
+        self.outputfilebuf.extend(c)
