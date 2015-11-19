@@ -1,6 +1,7 @@
 import macchinainterface
 import sputaferri
 import posaferri
+import trasportatori
 import anitimer.anitimer
 
 
@@ -25,10 +26,13 @@ class Macchina(macchinainterface.MacchinaInterface):
 
         # sputaferri (SPF)
         self.sputaferri = sputaferri.SputaFerri()
+        self.breakpoint = 0  # frame di inizio per il ciclo successivo
 
         # posaferri (PSF)
         self.posaferri = posaferri.PosaFerri(self.risoluzione, self.numeroferri)
-        self.posaferri.optime = 3.0  # settaggio velocita della posa di un singolo ferro
+
+        # trasportatori (TRS)
+        self.trasportatori = trasportatori.Trasportatori()
 
     def setzonacorrente(self, zonacorrente):
         """
@@ -154,3 +158,18 @@ class Macchina(macchinainterface.MacchinaInterface):
         self.timer1.passseconds(tempoesecuzione)
         self.timer1.endframe += 1
         print self.timer1.endframe
+
+    def trasporta(self, ntrasp, ruota, spostvassoio):
+        """
+        Invia al wrapper il comando di azionare i trasportatori
+        :param ntrasp:
+        :param ruota:
+        :param spostvassoio:
+        :return:
+        """
+        r = self.trasportatori.trasporta(ntrasp, self.zonacorrente, ruota, spostvassoio, self.timer1.endframe, self.timer1.fps)
+
+        self.outputfilebuf.extend(r['buffer'])
+        self.timer1.endframe += (r['tempo'] + 1)
+        print self.timer1.endframe
+        self.timer1.endframe = r['break']

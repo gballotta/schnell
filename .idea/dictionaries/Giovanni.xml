@@ -1,14 +1,19 @@
 <component name="ProjectDictionaryState">
   <dictionary name="Giovanni">
     <words>
+      <w>abbassato</w>
       <w>aggiunta</w>
       <w>alpa</w>
       <w>altre</w>
       <w>altrimenti</w>
+      <w>anche</w>
       <w>andare</w>
+      <w>anima</w>
       <w>animazione</w>
+      <w>arrivo</w>
       <w>attivare</w>
       <w>avanti</w>
+      <w>azionare</w>
       <w>barra</w>
       <w>barrepasso</w>
       <w>breakname</w>
@@ -20,11 +25,13 @@
       <w>centimetri</w>
       <w>cframe</w>
       <w>chiavi</w>
+      <w>ciclo</w>
       <w>cilindro</w>
       <w>cino</w>
       <w>cliente</w>
       <w>commandsbuf</w>
       <w>completa</w>
+      <w>comuni</w>
       <w>connetti</w>
       <w>contatore</w>
       <w>contenente</w>
@@ -40,6 +47,7 @@
       <w>devono</w>
       <w>dfase</w>
       <w>diametro</w>
+      <w>dobbiamo</w>
       <w>dopo</w>
       <w>dumpare</w>
       <w>dumpascript</w>
@@ -53,6 +61,7 @@
       <w>estrudibarra</w>
       <w>estrudibarre</w>
       <w>eulerangles</w>
+      <w>eventuale</w>
       <w>facciamo</w>
       <w>ferri</w>
       <w>ferro</w>
@@ -63,6 +72,7 @@
       <w>framemovimentoferri</w>
       <w>framesno</w>
       <w>framestart</w>
+      <w>fstart</w>
       <w>generali</w>
       <w>getbreakpoint</w>
       <w>heightsegs</w>
@@ -71,6 +81,9 @@
       <w>inizializza</w>
       <w>inizializzasetup</w>
       <w>inizializzato</w>
+      <w>inizializzazione</w>
+      <w>inizializziamo</w>
+      <w>inizio</w>
       <w>inserire</w>
       <w>intero</w>
       <w>invia</w>
@@ -87,14 +100,18 @@
       <w>maxscript</w>
       <w>messi</w>
       <w>mettere</w>
+      <w>modo</w>
       <w>mostrare</w>
       <w>muove</w>
       <w>muovere</w>
+      <w>muovono</w>
       <w>nella</w>
+      <w>ntrasp</w>
       <w>numeroferri</w>
       <w>numerotrasportatori</w>
       <w>ombra</w>
       <w>optime</w>
+      <w>orizzontale</w>
       <w>outputfilebuf</w>
       <w>outputsetup</w>
       <w>outputsetupbuf</w>
@@ -108,15 +125,20 @@
       <w>posabarre</w>
       <w>posaferri</w>
       <w>posare</w>
+      <w>posiziona</w>
       <w>posizionamento</w>
       <w>potere</w>
+      <w>presa</w>
       <w>prima</w>
+      <w>queste</w>
       <w>questo</w>
       <w>raggio</w>
       <w>raggiobarra</w>
       <w>relativo</w>
       <w>resettacarrello</w>
       <w>resettarla</w>
+      <w>rfend</w>
+      <w>rfstart</w>
       <w>richiesta</w>
       <w>risoluzione</w>
       <w>ritorna</w>
@@ -142,8 +164,10 @@
       <w>setbreaks</w>
       <w>setta</w>
       <w>settaggio</w>
+      <w>settato</w>
       <w>settore</w>
       <w>setzonacorrente</w>
+      <w>sezione</w>
       <w>simulazione</w>
       <w>singolo</w>
       <w>solamente</w>
@@ -158,20 +182,41 @@
       <w>spostacatenariaindietro</w>
       <w>spostamento</w>
       <w>spostare</w>
+      <w>spostvassoio</w>
       <w>sputaferri</w>
       <w>sputaferro</w>
       <w>startframe</w>
+      <w>successivo</w>
       <w>superiori</w>
       <w>tempoesecuzione</w>
       <w>temporizzatore</w>
+      <w>temporotazione</w>
+      <w>tenere</w>
       <w>totale</w>
+      <w>tragitto</w>
+      <w>tragittox</w>
+      <w>tragittoy</w>
+      <w>tragittoz</w>
       <w>transizioni</w>
+      <w>traportatore</w>
+      <w>traportatori</w>
+      <w>trasporta</w>
       <w>trasportabarre</w>
+      <w>trasportare</w>
+      <w>trasportatore</w>
+      <w>trasportatori</w>
       <w>tredifase</w>
       <w>tutte</w>
+      <w>tutto</w>
       <w>uguale</w>
+      <w>variabili</w>
       <w>varie</w>
+      <w>velocitavassoio</w>
+      <w>velocitay</w>
+      <w>velocitaz</w>
       <w>verra</w>
+      <w>verticale</w>
+      <w>vstart</w>
       <w>vuoto</w>
       <w>zona</w>
       <w>zonacorrente</w>
