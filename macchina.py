@@ -118,14 +118,19 @@ class Macchina(macchinainterface.MacchinaInterface):
         :param settore: il settore di sbarre da posare
         :return:
         """
-        c = self.posaferri.posa(settore, self.timer1.endframe, self.timer1.fps)
-        self.outputfilebuf.extend(c)
+        c = self.posaferri.posa(settore, self.breakpoint, self.timer1.fps)
+        self.outputfilebuf.extend(c['buffer'])
 
         # calcolo del tempo di esecuzione a aggiornamento del timer
 
-        tempoesecuzione = self.posaferri.optime * self.numeroferri
-        self.timer1.passseconds(tempoesecuzione)
+        self.timer1.endframe += c['tempo']
+        self.timer1.currentframe = self.timer1.endframe
+
         print self.timer1.endframe
+
+        # tempoesecuzione = self.posaferri.optime * self.numeroferri
+        # self.timer1.passseconds(tempoesecuzione)
+        # print self.timer1.endframe
 
     def spostacatenaria(self, passi):
         """
@@ -133,15 +138,18 @@ class Macchina(macchinainterface.MacchinaInterface):
         :param passi:
         :return:
         """
-        c = self.posaferri.spostacatenaria(passi, self.zonacorrente, self.timer1.endframe + 1, self.timer1.fps)
-        self.outputfilebuf.extend(c)
+        c = self.posaferri.spostacatenaria(passi, self.zonacorrente, self.timer1.currentframe, self.timer1.fps)
+        self.outputfilebuf.extend(c['buffer'])
 
         # calcolo del tempo di esecuzione a aggiornamento del timer
 
-        tempoesecuzione = (self.posaferri.optime - 1) * passi
-        self.timer1.passseconds(tempoesecuzione)
-        self.timer1.endframe += 1
-        print self.timer1.endframe
+        self.timer1.endframe += c['tempo']
+        self.timer1.currentframe = self.timer1.endframe
+
+        # tempoesecuzione = (self.posaferri.optime - 1) * passi
+        # self.timer1.passseconds(tempoesecuzione)
+        # self.timer1.endframe += 1
+        print self.timer1.currentframe
 
     def spostacatenariaindietro(self, passi):
         """
@@ -149,14 +157,17 @@ class Macchina(macchinainterface.MacchinaInterface):
         :param passi:
         :return:
         """
-        c = self.posaferri.spostacatenariaindietro(passi, self.timer1.endframe + 1, self.timer1.fps)
-        self.outputfilebuf.extend(c)
+        c = self.posaferri.spostacatenariaindietro(passi, self.timer1.endframe, self.timer1.fps)
+        self.outputfilebuf.extend(c['buffer'])
 
         # calcolo del tempo di esecuzione a aggiornamento del timer
 
-        tempoesecuzione = (self.posaferri.optime - 1) * passi
-        self.timer1.passseconds(tempoesecuzione)
-        self.timer1.endframe += 1
+        self.timer1.endframe += c['tempo']
+        self.timer1.currentframe = self.timer1.endframe
+
+        # tempoesecuzione = (self.posaferri.optime - 1) * passi
+        # self.timer1.passseconds(tempoesecuzione)
+        # self.timer1.endframe += 1
         print self.timer1.endframe
 
     def trasporta(self, ntrasp, ruota, spostvassoio):
@@ -172,4 +183,4 @@ class Macchina(macchinainterface.MacchinaInterface):
         self.outputfilebuf.extend(r['buffer'])
         self.timer1.endframe += (r['tempo'] + 1)
         print self.timer1.endframe
-        self.timer1.endframe = r['break']
+        self.breakpoint = r['break']

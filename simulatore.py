@@ -5,10 +5,10 @@ barrepasso01 = [90.0, 90.0, 90.0, 90.0, 90.0,
                 90.0, 90.0, 90.0, 90.0, 360.0,
                 360.0, 360.0, 360.0, 360.0, 360.0]
 
-barrepasso02 = [432.0, 432.0, 432.0, 432.0, 432.0,
+barrepasso02 = [300.0, 300.0, 300.0, 300.0, 300.0,
                 300.0, 300.0, 300.0, 300.0, 300.0,
-                300.0, 300.0, 300.0, 300.0, 1.0,
-                1.0, 1.0, 1.0, 1.0, 1.0]
+                300.0, 300.0, 300.0, 300.0, 300.0,
+                300.0, 300.0, 300.0, 300.0, 300.0]
 
 schnell = macchina.Macchina()
 schnell.setzonacorrente(1)
@@ -23,5 +23,5 @@ schnell.spostacatenariaindietro(20)
 schnell.setzonacorrente(2)
 schnell.posabarre(2)
 schnell.spostacatenaria(1)
-schnell.trasporta(1, 1, -170.0)
+schnell.trasporta(1, 1, 0)
 schnell.dumpascript()

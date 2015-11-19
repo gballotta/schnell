@@ -3,6 +3,7 @@ class AniTimer(object):
         self.fps = fps
         self.startframe = startframe
         self.breakpoints = {}
+        self.currentframe = 0
         self.endframe = 0
 
     def passframes(self, framesno):
