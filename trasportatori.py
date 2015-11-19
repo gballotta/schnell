@@ -67,16 +67,44 @@ class Trasportatori(object):
         s = "at time %s animate on move $ [0, 0, %s]" % (t3fend, self.tragittoz)
         cbuf.append(s)
 
+        # eventuale rotazione
+        if ruota == 1:
+            # variabili
+            cbuf.append("ruoto = eulerangles 0 0 90")
+            cbuf.append("ruotof = eulerangles 0 0 0")
+            cbuf.append("poso = $ctl_t1_rot.pivot")
+            # allineamento pivot
+            s = "select $sbarra_%s*" % sezione
+            cbuf.append(s)
+            # cbuf.append("for i in selection do ( i.pivot = [150, 550, 0] )")
+            # spostamento
+            cbuf.append("selectMore $ctl_t1_rot")
+            cbuf.append("for i in selection do (")
+            s = "   at time %s animate on rotate i ruotof" % t3rfstart
+            cbuf.append(s)
+            s = "   at time %s animate on rotate i ruoto" % t3rfend
+            cbuf.append(s)
+            cbuf.append("   )")
+            # riselezione di sbarre e trasportatore (se si ruota si puo' usare solo il traportatore 1
+            cbuf.append("select $ctl_t1_y")
+            s = "selectMore $sbarra_%s*" % sezione
+            cbuf.append(s)
+
         # tragitto 4 (da p1 a reset)
         s = "at time %s animate on move $ [0, 0, 0]" % t4fstart
         cbuf.append(s)
         s = "at time %s animate on move $ [0, -%s, 0]" % (t4fend, self.tragittoy)
         cbuf.append(s)
 
+        # correzione dell'abbassamento in caso di rotazione (i ferri finiscono un po piu' sopra)
+        appoggio = self.tragittoz
+        if ruota == 1:
+            appoggio = self.tragittoz - 1
+
         # tragitto 5 (da reset a p2 abbassato)
         s = "at time %s animate on move $ [0, 0, 0]" % t5fstart
         cbuf.append(s)
-        s = "at time %s animate on move $ [0, 0, -%s]" % (t5fend, self.tragittoz)
+        s = "at time %s animate on move $ [0, 0, -%s]" % (t5fend, appoggio)
         cbuf.append(s)
 
         # tragitto 6 (da p2 abbassato a reset)
@@ -85,7 +113,7 @@ class Trasportatori(object):
             cbuf.append("selectMore $ctl_t2_y")
         s = "at time %s animate on move $ [0, 0, 0]" % t6fstart
         cbuf.append(s)
-        s = "at time %s animate on move $ [0, 0, %s]" % (t6fend, self.tragittoz)
+        s = "at time %s animate on move $ [0, 0, %s]" % (t6fend, appoggio)
         cbuf.append(s)
 
         # eventuale spostamento del vassoio

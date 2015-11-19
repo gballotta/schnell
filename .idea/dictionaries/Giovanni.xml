@@ -3,6 +3,7 @@
     <words>
       <w>abbassato</w>
       <w>aggiunta</w>
+      <w>allineamento</w>
       <w>alpa</w>
       <w>altre</w>
       <w>altrimenti</w>
@@ -10,6 +11,7 @@
       <w>andare</w>
       <w>anima</w>
       <w>animazione</w>
+      <w>appoggio</w>
       <w>arrivo</w>
       <w>attivare</w>
       <w>avanti</w>
@@ -36,6 +38,7 @@
       <w>contatore</w>
       <w>contenente</w>
       <w>corrente</w>
+      <w>correzione</w>
       <w>crea</w>
       <w>creabarra</w>
       <w>creare</w>
@@ -67,6 +70,7 @@
       <w>ferro</w>
       <w>ferromaker</w>
       <w>fila</w>
+      <w>finiscono</w>
       <w>framemovimento</w>
       <w>framemovimentocatenaria</w>
       <w>framemovimentoferri</w>
@@ -121,12 +125,14 @@
       <w>passi</w>
       <w>passseconds</w>
       <w>perche</w>
+      <w>pivy</w>
       <w>posa</w>
       <w>posabarre</w>
       <w>posaferri</w>
       <w>posare</w>
       <w>posiziona</w>
       <w>posizionamento</w>
+      <w>poso</w>
       <w>potere</w>
       <w>presa</w>
       <w>prima</w>
@@ -140,12 +146,15 @@
       <w>rfend</w>
       <w>rfstart</w>
       <w>richiesta</w>
+      <w>riselezione</w>
       <w>risoluzione</w>
       <w>ritorna</w>
       <w>ritornare</w>
       <w>rotazione</w>
       <w>rotazionesbarra</w>
       <w>ruota</w>
+      <w>ruoto</w>
+      <w>ruotof</w>
       <w>sbarra</w>
       <w>sbarre</w>
       <w>scalare</w>
@@ -171,6 +180,7 @@
       <w>simulazione</w>
       <w>singolo</w>
       <w>solamente</w>
+      <w>sopra</w>
       <w>speciale</w>
       <w>spessore</w>
       <w>spessoresbarra</w>
@@ -209,6 +219,7 @@
       <w>tutte</w>
       <w>tutto</w>
       <w>uguale</w>
+      <w>usare</w>
       <w>variabili</w>
       <w>varie</w>
       <w>velocitavassoio</w>

@@ -17,6 +17,13 @@ class PosaFerri(object):
         framemovimentocatenaria = int((self.optime - 1) * fps) - 1
         framemovimentoferri = int(fps - 1)
 
+        # settaggio dei pivot delle sbarre per la rotazione
+
+        for i in range(0, self.numeroferri):
+            pivy = 850 + self.risoluzione * (20 - i)
+            s = "$sbarra_%s_%s.pivot = [150, %s, 102]" % (settore, (i + 1), pivy)
+            cbuf.append(s)
+
         # spostamento della catenaria
 
         for i in range(1, (self.numeroferri + 1)):
@@ -41,7 +48,8 @@ class PosaFerri(object):
             cbuf.append(s)
             cframe += framemovimentoferri
             cbuf.append("maxOps.setDefaultTangentType #slow #linear")  # il ferro si muove linear
-            s = "at time %s animate on $.position = $hlp_sbarre_origine_catenaria.position" % cframe
+            # s = "at time %s animate on $.position = $hlp_sbarre_origine_catenaria.position" % cframe
+            s = "at time %s animate on move $ [0, -100, -60]" % cframe
             cbuf.append(s)
             cframe += 1
 
