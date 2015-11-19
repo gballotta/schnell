@@ -2,6 +2,7 @@ import macchinainterface
 import sputaferri
 import posaferri
 import trasportatori
+import linea
 import anitimer.anitimer
 
 
@@ -33,6 +34,9 @@ class Macchina(macchinainterface.MacchinaInterface):
 
         # trasportatori (TRS)
         self.trasportatori = trasportatori.Trasportatori()
+
+        # linea (LNE)
+        self.linea = linea.Linea()
 
     def setzonacorrente(self, zonacorrente):
         """
@@ -181,6 +185,96 @@ class Macchina(macchinainterface.MacchinaInterface):
         r = self.trasportatori.trasporta(ntrasp, self.zonacorrente, ruota, spostvassoio, self.timer1.endframe, self.timer1.fps)
 
         self.outputfilebuf.extend(r['buffer'])
-        self.timer1.endframe += (r['tempo'] + 1)
+        self.timer1.endframe += (r['tempo'])
+        self.timer1.currentframe = self.timer1.endframe
         print self.timer1.endframe
         self.breakpoint = r['break']
+
+    def muovivassoio(self, tragitto):
+        """
+        sposta il vassoio arbitrariamente (per esempio per metterlo a posto)
+        :param tragitto: percorso in centimetri
+        :return:
+        """
+        r = self.linea.spostavassoio(tragitto, self.timer1.currentframe, self.timer1.fps)
+        self.outputfilebuf.extend(r['buffer'])
+        self.timer1.endframe += (r['tempo'])
+        self.timer1.currentframe = self.timer1.endframe
+        print self.timer1.endframe
+
+    def portasumanuale(self):
+        """
+        Invia al wrapper il comando di portare il vassoio nella posizione di posa manuale
+        :return:
+        """
+        r = self.linea.vtragitto_0_1(self.timer1.currentframe, self.timer1.fps)
+        self.outputfilebuf.extend(r['buffer'])
+        self.timer1.endframe += (r['tempo'])
+        self.timer1.currentframe = self.timer1.endframe
+        print self.timer1.endframe
+
+    def portasusaldatori(self):
+        """
+        Invia al wrapper il comando di portare il vassoio nella posizione di inizio saldatura
+        :return:
+        """
+        r = self.linea.vtragitto_1_2(self.timer1.currentframe, self.timer1.fps)
+        self.outputfilebuf.extend(r['buffer'])
+        self.timer1.endframe += (r['tempo'])
+        self.timer1.currentframe = self.timer1.endframe
+        print self.timer1.endframe
+
+    def saldatura(self):
+        """
+        Invia al wrapper i comandi di saldatura
+        :return:
+        """
+        r = self.linea.salda(self.timer1.currentframe, self.timer1.fps)
+        self.outputfilebuf.extend(r['buffer'])
+        self.timer1.endframe += (r['tempo'])
+        self.timer1.currentframe = self.timer1.endframe
+        print self.timer1.endframe
+
+    def portasucarico(self):
+        """
+        Invia al wrapper il comando di portare il vassoio nella posizione di carico
+        :return:
+        """
+        r = self.linea.vtragitto_2_3(self.timer1.currentframe, self.timer1.fps)
+        self.outputfilebuf.extend(r['buffer'])
+        self.timer1.endframe += (r['tempo'])
+        self.timer1.currentframe = self.timer1.endframe
+        print self.timer1.endframe
+
+    def portaindietro(self):
+        """
+        Invia al wrapper il comando di portare il vassoio nella posizione iniziale
+        :return:
+        """
+        r = self.linea.vtragitto_3_4(self.timer1.currentframe, self.timer1.fps)
+        self.outputfilebuf.extend(r['buffer'])
+        self.timer1.endframe += (r['tempo'])
+        self.timer1.currentframe = self.timer1.endframe
+        print self.timer1.endframe
+
+    def scendivassoio(self):
+        """
+        Invia al wrapper il comando di fare scendere il vassoio
+        :return:
+        """
+        r = self.linea.vassoiogiu(self.timer1.currentframe, self.timer1.fps)
+        self.outputfilebuf.extend(r['buffer'])
+        self.timer1.endframe += (r['tempo'])
+        self.timer1.currentframe = self.timer1.endframe
+        print self.timer1.endframe
+
+    def salivassoio(self):
+        """
+        Invia al wrapper il comando di fare salire il vassoio
+        :return:
+        """
+        r = self.linea.vassoiosu(self.timer1.currentframe, self.timer1.fps)
+        self.outputfilebuf.extend(r['buffer'])
+        self.timer1.endframe += (r['tempo'])
+        self.timer1.currentframe = self.timer1.endframe
+        print self.timer1.endframe

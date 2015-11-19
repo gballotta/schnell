@@ -1,8 +1,11 @@
 <component name="ProjectDictionaryState">
   <dictionary name="Giovanni">
     <words>
+      <w>abbassamento</w>
+      <w>abbassamentocarrello</w>
       <w>abbassato</w>
       <w>aggiunta</w>
+      <w>aggiustamento</w>
       <w>allineamento</w>
       <w>alpa</w>
       <w>altre</w>
@@ -12,8 +15,10 @@
       <w>anima</w>
       <w>animazione</w>
       <w>appoggio</w>
+      <w>arbitrariamente</w>
       <w>arrivo</w>
       <w>attivare</w>
+      <w>automatico</w>
       <w>avanti</w>
       <w>azionare</w>
       <w>barra</w>
@@ -22,6 +27,8 @@
       <w>buchi</w>
       <w>cadere</w>
       <w>caduta</w>
+      <w>carico</w>
+      <w>carrello</w>
       <w>catenaria</w>
       <w>cbuf</w>
       <w>centimetri</w>
@@ -31,7 +38,9 @@
       <w>cilindro</w>
       <w>cino</w>
       <w>cliente</w>
+      <w>cominciano</w>
       <w>commandsbuf</w>
+      <w>compiere</w>
       <w>completa</w>
       <w>comuni</w>
       <w>connetti</w>
@@ -44,12 +53,15 @@
       <w>creare</w>
       <w>creata</w>
       <w>creazione</w>
+      <w>dalla</w>
+      <w>dallo</w>
       <w>dello</w>
       <w>dentro</w>
       <w>deve</w>
       <w>devono</w>
       <w>dfase</w>
       <w>diametro</w>
+      <w>dispari</w>
       <w>dobbiamo</w>
       <w>dopo</w>
       <w>dumpare</w>
@@ -59,6 +71,7 @@
       <w>elementi</w>
       <w>endframe</w>
       <w>esecuzione</w>
+      <w>esempio</w>
       <w>essere</w>
       <w>estrude</w>
       <w>estrudibarra</w>
@@ -66,6 +79,7 @@
       <w>eulerangles</w>
       <w>eventuale</w>
       <w>facciamo</w>
+      <w>fdest</w>
       <w>ferri</w>
       <w>ferro</w>
       <w>ferromaker</w>
@@ -76,12 +90,17 @@
       <w>framemovimentoferri</w>
       <w>framesno</w>
       <w>framestart</w>
+      <w>frend</w>
+      <w>frstart</w>
       <w>fstart</w>
+      <w>funzionano</w>
+      <w>funzionare</w>
       <w>generali</w>
       <w>getbreakpoint</w>
       <w>heightsegs</w>
       <w>impiegato</w>
       <w>inferiori</w>
+      <w>iniziale</w>
       <w>inizializza</w>
       <w>inizializzasetup</w>
       <w>inizializzato</w>
@@ -100,42 +119,63 @@
       <w>lunghezza</w>
       <w>lunghezzabarra</w>
       <w>lunghezze</w>
+      <w>lungo</w>
       <w>macchina</w>
+      <w>manuale</w>
       <w>maxscript</w>
       <w>messi</w>
+      <w>metri</w>
       <w>mettere</w>
+      <w>metterlo</w>
       <w>modo</w>
       <w>mostrare</w>
+      <w>movimento</w>
       <w>muove</w>
       <w>muovere</w>
+      <w>muovivassoio</w>
       <w>muovono</w>
+      <w>negativo</w>
       <w>nella</w>
+      <w>nruoto</w>
       <w>ntrasp</w>
       <w>numeroferri</w>
       <w>numerotrasportatori</w>
+      <w>oggetti</w>
       <w>ombra</w>
       <w>optime</w>
       <w>orizzontale</w>
+      <w>orizzontalmente</w>
       <w>outputfilebuf</w>
       <w>outputsetup</w>
       <w>outputsetupbuf</w>
       <w>parametri</w>
+      <w>pari</w>
       <w>parte</w>
       <w>passframes</w>
       <w>passi</w>
       <w>passseconds</w>
       <w>perche</w>
+      <w>percorso</w>
       <w>pivy</w>
+      <w>portaindietro</w>
+      <w>portare</w>
+      <w>portasucarico</w>
+      <w>portasumanuale</w>
+      <w>portasusaldatori</w>
       <w>posa</w>
       <w>posabarre</w>
       <w>posaferri</w>
       <w>posare</w>
+      <w>positivo</w>
       <w>posiziona</w>
       <w>posizionamento</w>
       <w>poso</w>
+      <w>posto</w>
       <w>potere</w>
+      <w>precedenza</w>
       <w>presa</w>
       <w>prima</w>
+      <w>quella</w>
       <w>queste</w>
       <w>questo</w>
       <w>raggio</w>
@@ -153,15 +193,26 @@
       <w>rotazione</w>
       <w>rotazionesbarra</w>
       <w>ruota</w>
+      <w>ruotatoprima</w>
       <w>ruoto</w>
       <w>ruotof</w>
+      <w>salda</w>
+      <w>saldatori</w>
+      <w>saldatura</w>
+      <w>saldature</w>
+      <w>salire</w>
+      <w>salivassoio</w>
       <w>sbarra</w>
       <w>sbarre</w>
       <w>scalare</w>
+      <w>scendere</w>
+      <w>scendivassoio</w>
       <w>schnell</w>
+      <w>scostamento</w>
       <w>scrittura</w>
       <w>scrive</w>
       <w>secondi</w>
+      <w>secondo</w>
       <w>secondsno</w>
       <w>secstoframes</w>
       <w>selezione</w>
@@ -192,16 +243,22 @@
       <w>spostacatenariaindietro</w>
       <w>spostamento</w>
       <w>spostare</w>
+      <w>spostavassoio</w>
+      <w>spostavassoiovert</w>
       <w>spostvassoio</w>
       <w>sputaferri</w>
       <w>sputaferro</w>
       <w>startframe</w>
+      <w>stata</w>
       <w>successivo</w>
       <w>superiori</w>
       <w>tempoesecuzione</w>
       <w>temporizzatore</w>
       <w>temporotazione</w>
       <w>tenere</w>
+      <w>tmezzasaldatura</w>
+      <w>tmovend</w>
+      <w>tmovstart</w>
       <w>totale</w>
       <w>tragitto</w>
       <w>tragittox</w>
@@ -210,24 +267,39 @@
       <w>transizioni</w>
       <w>traportatore</w>
       <w>traportatori</w>
+      <w>traslazione</w>
+      <w>traslazionesaldatori</w>
       <w>trasporta</w>
       <w>trasportabarre</w>
       <w>trasportare</w>
       <w>trasportatore</w>
       <w>trasportatori</w>
+      <w>trasporto</w>
       <w>tredifase</w>
+      <w>tsald</w>
+      <w>tspostamentocarrello</w>
       <w>tutte</w>
       <w>tutto</w>
       <w>uguale</w>
       <w>usare</w>
+      <w>uscita</w>
       <w>variabili</w>
       <w>varie</w>
+      <w>vassoiogiu</w>
+      <w>vassoiosu</w>
+      <w>velocitapassocarrello</w>
+      <w>velocitasaldatori</w>
       <w>velocitavassoio</w>
+      <w>velocitavassoiovert</w>
       <w>velocitay</w>
       <w>velocitaz</w>
+      <w>verificare</w>
       <w>verra</w>
       <w>verticale</w>
+      <w>verticalmente</w>
+      <w>viaggio</w>
       <w>vstart</w>
+      <w>vtragitto</w>
       <w>vuoto</w>
       <w>zona</w>
       <w>zonacorrente</w>

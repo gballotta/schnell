@@ -6,6 +6,7 @@ class Trasportatori(object):
         self.tragittoz = 50  # tragitto verticale dei trasportatori
         self.temporotazione = 1  # tempo di rotazione del trasportatore 1 in secondi
         self.velocitavassoio = 100  # velocita orizzontale del vassoio
+        self.ruotatoprima = False  # flag per verificare se in precedenza c'era stata una rotazione
 
     def trasporta(self, ntrasp, sezione, ruota, spostvassoio, framestart, fps):
         """
@@ -23,7 +24,12 @@ class Trasportatori(object):
         cbuf = []  # buffer dei comandi da ritornare
         t1fstart = framestart + 1  # frame di partenza tragitto 1 (da reset a p1)
         t1fend = t1fstart + self.tragittoy / self.velocitay * fps - 1  # frame di arrivo tragitto 1
-        t2fstart = t1fend + 1  # frame di partenza tragitto 1 (da p1 a p1 abbassato)
+        t1frstart = 0
+        t1frend = t1fend
+        if self.ruotatoprima:
+            t1frstart = t1fend + 1  # frame di partenza della rotazione
+            t1frend = t1frstart + self.temporotazione * fps - 1
+        t2fstart = t1frend + 1  # frame di partenza tragitto 1 (da p1 a p1 abbassato)
         t2fend = t2fstart + self.tragittoz / self.velocitaz * fps - 1  # frame di arrivo tragitto 2
         t3fstart = t2fend + 1  # frame di partenza tragitto 3 (da p1 abbassato a p1)
         t3fend = t3fstart + self.tragittoz / self.velocitaz * fps - 1  # frame di arrivo tragitto 3
@@ -51,6 +57,16 @@ class Trasportatori(object):
         s = "at time %s animate on move $ [0, %s, 0]" % (t1fend, self.tragittoy)
         cbuf.append(s)
 
+        # eventuale rotazione di aggiustamento
+        if self.ruotatoprima:
+            cbuf.append("nruoto = eulerangles 0 0 -90")
+            cbuf.append("ruotof = eulerangles 0 0 0")
+            s = "at time %s animate on rotate $ctl_t1_rot ruotof" % t1frstart
+            cbuf.append(s)
+            s = "at time %s animate on rotate $ctl_t1_rot nruoto" % t1frend
+            cbuf.append(s)
+            self.ruotatoprima = False
+
         # tragitto 2 (da p1 a p1 abbassato)
         s = "at time %s animate on move $ [0, 0, 0]" % t2fstart
         cbuf.append(s)
@@ -71,6 +87,7 @@ class Trasportatori(object):
         if ruota == 1:
             # variabili
             cbuf.append("ruoto = eulerangles 0 0 90")
+            cbuf.append("nruoto = eulerangles 0 0 -90")
             cbuf.append("ruotof = eulerangles 0 0 0")
             cbuf.append("poso = $ctl_t1_rot.pivot")
             # allineamento pivot
@@ -126,5 +143,10 @@ class Trasportatori(object):
             cbuf.append(s)
             s = "at time %s animate on move $ [%s, 0, 0]" % (vend, spostvassoio)
             cbuf.append(s)
+
+        # settaggio del flag in caso di rotazione in questo trasporto
+
+        if ruota == 1:
+            self.ruotatoprima = True
 
         return {"tempo": (t6fend - framestart), "buffer": cbuf, "break": t4fstart}
