@@ -5,18 +5,22 @@
       <w>abbassamentocarrello</w>
       <w>abbassato</w>
       <w>aggiunta</w>
+      <w>aggiunto</w>
       <w>aggiustamento</w>
       <w>allineamento</w>
       <w>alpa</w>
       <w>altre</w>
       <w>altrimenti</w>
+      <w>alzatore</w>
       <w>anche</w>
       <w>andare</w>
       <w>anima</w>
       <w>animazione</w>
+      <w>antiorario</w>
       <w>appoggio</w>
       <w>arbitrariamente</w>
       <w>arrivo</w>
+      <w>assegnazione</w>
       <w>attivare</w>
       <w>automatico</w>
       <w>avanti</w>
@@ -31,6 +35,7 @@
       <w>carrello</w>
       <w>catenaria</w>
       <w>cbuf</w>
+      <w>cend</w>
       <w>centimetri</w>
       <w>cframe</w>
       <w>chiavi</w>
@@ -38,6 +43,7 @@
       <w>cilindro</w>
       <w>cino</w>
       <w>cliente</w>
+      <w>codice</w>
       <w>cominciano</w>
       <w>commandsbuf</w>
       <w>compiere</w>
@@ -48,19 +54,24 @@
       <w>contenente</w>
       <w>corrente</w>
       <w>correzione</w>
+      <w>cosi</w>
       <w>crea</w>
       <w>creabarra</w>
       <w>creare</w>
       <w>creata</w>
       <w>creazione</w>
+      <w>cstart</w>
       <w>dalla</w>
       <w>dallo</w>
+      <w>definizione</w>
       <w>dello</w>
       <w>dentro</w>
+      <w>destra</w>
       <w>deve</w>
       <w>devono</w>
       <w>dfase</w>
       <w>diametro</w>
+      <w>discesa</w>
       <w>dispari</w>
       <w>dobbiamo</w>
       <w>dopo</w>
@@ -97,8 +108,11 @@
       <w>funzionare</w>
       <w>generali</w>
       <w>getbreakpoint</w>
+      <w>hardcode</w>
       <w>heightsegs</w>
+      <w>heigth</w>
       <w>impiegato</w>
+      <w>incasinato</w>
       <w>inferiori</w>
       <w>iniziale</w>
       <w>inizializza</w>
@@ -108,11 +122,13 @@
       <w>inizializziamo</w>
       <w>inizio</w>
       <w>inserire</w>
+      <w>inserisce</w>
       <w>intero</w>
       <w>invia</w>
       <w>invisibile</w>
       <w>lanciare</w>
       <w>lasciagriglia</w>
+      <w>laterale</w>
       <w>lavorazione</w>
       <w>lista</w>
       <w>locazione</w>
@@ -122,7 +138,13 @@
       <w>lungo</w>
       <w>macchina</w>
       <w>manuale</w>
+      <w>mappac</w>
+      <w>mappatura</w>
+      <w>maptype</w>
+      <w>materiale</w>
       <w>maxscript</w>
+      <w>medit</w>
+      <w>meno</w>
       <w>messi</w>
       <w>metri</w>
       <w>mettere</w>
@@ -143,6 +165,7 @@
       <w>oggetti</w>
       <w>ombra</w>
       <w>optime</w>
+      <w>orario</w>
       <w>orizzontale</w>
       <w>orizzontalmente</w>
       <w>outputfilebuf</w>
@@ -175,6 +198,7 @@
       <w>precedenza</w>
       <w>presa</w>
       <w>prima</w>
+      <w>proviamo</w>
       <w>quella</w>
       <w>queste</w>
       <w>questo</w>
@@ -183,6 +207,7 @@
       <w>relativo</w>
       <w>resettacarrello</w>
       <w>resettarla</w>
+      <w>rete</w>
       <w>rfend</w>
       <w>rfstart</w>
       <w>richiesta</w>
@@ -193,6 +218,7 @@
       <w>rotazione</w>
       <w>rotazionesbarra</w>
       <w>ruota</w>
+      <w>ruotatocoeff</w>
       <w>ruotatoprima</w>
       <w>ruoto</w>
       <w>ruotof</w>
@@ -201,6 +227,7 @@
       <w>saldatura</w>
       <w>saldature</w>
       <w>salire</w>
+      <w>salita</w>
       <w>salivassoio</w>
       <w>sbarra</w>
       <w>sbarre</w>
@@ -230,9 +257,11 @@
       <w>sezione</w>
       <w>simulazione</w>
       <w>singolo</w>
+      <w>sinistra</w>
       <w>solamente</w>
       <w>sopra</w>
       <w>speciale</w>
+      <w>spero</w>
       <w>spessore</w>
       <w>spessoresbarra</w>
       <w>sposta</w>
@@ -283,10 +312,14 @@
       <w>uguale</w>
       <w>usare</w>
       <w>uscita</w>
+      <w>utile</w>
+      <w>uvwmap</w>
+      <w>variabile</w>
       <w>variabili</w>
       <w>varie</w>
       <w>vassoiogiu</w>
       <w>vassoiosu</w>
+      <w>velocitalatsaldatori</w>
       <w>velocitapassocarrello</w>
       <w>velocitasaldatori</w>
       <w>velocitavassoio</w>

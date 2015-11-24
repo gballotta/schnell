@@ -16,6 +16,10 @@ class SputaFerri(object):
         # creazione del cilindro
         s = "foo = Cylinder name:\"sbarra_%s_%s\" radius:%s height:%s heightsegs:1 sides:16" % (settore, fid, diametro/2, altezza)
         commandsbuf.append(s)
+        # assegnazione del materiale
+        commandsbuf.append("foo.material = meditMaterials[1]")
+        # mappatura
+        commandsbuf.append("addModifier foo mappac")
         # rotazione
         s = "rotate foo rotazionesbarra"
         commandsbuf.append(s)

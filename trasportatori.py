@@ -1,12 +1,13 @@
 class Trasportatori(object):
     def __init__(self):
-        self.velocitay = 100  # velocita orizzontale dei traportatori
-        self.velocitaz = 50  # velocita verticale dei traportatori
-        self.tragittoy = 600  # tragitto orizzontale dei trasportatori
-        self.tragittoz = 50  # tragitto verticale dei trasportatori
+        self.velocitay = 315  # velocita orizzontale dei traportatori
+        self.velocitaz = 126  # velocita verticale dei traportatori
+        self.tragittoy = 630  # tragitto orizzontale dei trasportatori
+        self.tragittoz = 126  # tragitto verticale dei trasportatori
         self.temporotazione = 1  # tempo di rotazione del trasportatore 1 in secondi
         self.velocitavassoio = 100  # velocita orizzontale del vassoio
         self.ruotatoprima = False  # flag per verificare se in precedenza c'era stata una rotazione
+        self.ruotatocoeff = 0  # flag per verificare l'ultima rotazione : +1 antiorario -1 orario
 
     def trasporta(self, ntrasp, sezione, ruota, spostvassoio, framestart, fps):
         """
@@ -48,6 +49,7 @@ class Trasportatori(object):
         vend = vstart + int(abs(spostvassoio) / self.velocitavassoio * fps) - 1
 
         # tragitto 1 (da reset a p1)
+        cbuf.append("clearSelection()")
         cbuf.append("maxOps.setDefaultTangentType #slow #slow")  # i trasportatori muovono slow
         cbuf.append("select $ctl_t1_y")
         if ntrasp == 2:
@@ -59,7 +61,10 @@ class Trasportatori(object):
 
         # eventuale rotazione di aggiustamento
         if self.ruotatoprima:
-            cbuf.append("nruoto = eulerangles 0 0 -90")
+            if self.ruotatocoeff == 1:
+                cbuf.append("nruoto = eulerangles 0 0 -90")
+            else:
+                cbuf.append("nruoto = eulerangles 0 0 90")
             cbuf.append("ruotof = eulerangles 0 0 0")
             s = "at time %s animate on rotate $ctl_t1_rot ruotof" % t1frstart
             cbuf.append(s)
@@ -68,12 +73,18 @@ class Trasportatori(object):
             self.ruotatoprima = False
 
         # tragitto 2 (da p1 a p1 abbassato)
+        cbuf.append("select $ctl_t1_z")
+        if ntrasp == 2:
+            cbuf.append("selectMore $ctl_t2_z")
         s = "at time %s animate on move $ [0, 0, 0]" % t2fstart
         cbuf.append(s)
         s = "at time %s animate on move $ [0, 0, -%s]" % (t2fend, self.tragittoz)
         cbuf.append(s)
 
         # presa
+        cbuf.append("select $ctl_t1_z")
+        if ntrasp == 2:
+            cbuf.append("selectMore $ctl_t2_z")
         s = "selectMore $sbarra_%s*" % sezione
         cbuf.append(s)
 
@@ -84,10 +95,18 @@ class Trasportatori(object):
         cbuf.append(s)
 
         # eventuale rotazione
-        if ruota == 1:
+        if ruota != 0:
             # variabili
-            cbuf.append("ruoto = eulerangles 0 0 90")
-            cbuf.append("nruoto = eulerangles 0 0 -90")
+            if ruota == 1:
+                cbuf.append("ruoto = eulerangles 0 0 90")  # inserisce il verso di rotazione giusto
+                self.ruotatocoeff = 1
+            else:
+                cbuf.append("ruoto = eulerangles 0 0 -90")
+                self.ruotatocoeff = -1
+            if ruota == 1:
+                cbuf.append("nruoto = eulerangles 0 0 -90")  # e anche per la rotazione di ritorno
+            else:
+                cbuf.append("nruoto = eulerangles 0 0 90")
             cbuf.append("ruotof = eulerangles 0 0 0")
             cbuf.append("poso = $ctl_t1_rot.pivot")
             # allineamento pivot
@@ -102,12 +121,17 @@ class Trasportatori(object):
             s = "   at time %s animate on rotate i ruoto" % t3rfend
             cbuf.append(s)
             cbuf.append("   )")
-            # riselezione di sbarre e trasportatore (se si ruota si puo' usare solo il traportatore 1
+            # riselezione di sbarre e trasportatore (se si ruota si puo' usare solo il traportatore 1)
             cbuf.append("select $ctl_t1_y")
             s = "selectMore $sbarra_%s*" % sezione
             cbuf.append(s)
 
         # tragitto 4 (da p1 a reset)
+        cbuf.append("select $ctl_t1_y")
+        if ntrasp == 2:
+            cbuf.append("selectMore $ctl_t2_y")
+        s = "selectMore $sbarra_%s*" % sezione
+        cbuf.append(s)
         s = "at time %s animate on move $ [0, 0, 0]" % t4fstart
         cbuf.append(s)
         s = "at time %s animate on move $ [0, -%s, 0]" % (t4fend, self.tragittoy)
@@ -119,18 +143,23 @@ class Trasportatori(object):
             appoggio = self.tragittoz - 1
 
         # tragitto 5 (da reset a p2 abbassato)
+        cbuf.append("select $ctl_t1_z")
+        if ntrasp == 2:
+            cbuf.append("selectMore $ctl_t2_z")
+        s = "selectMore $sbarra_%s*" % sezione
+        cbuf.append(s)
         s = "at time %s animate on move $ [0, 0, 0]" % t5fstart
         cbuf.append(s)
-        s = "at time %s animate on move $ [0, 0, -%s]" % (t5fend, appoggio)
+        s = "at time %s animate on move $ [0, 0, -%s]" % (t5fend, appoggio - 22)  # correzione hardcode offset vassoio
         cbuf.append(s)
 
         # tragitto 6 (da p2 abbassato a reset)
-        cbuf.append("select $ctl_t1_y")
+        cbuf.append("select $ctl_t1_z")
         if ntrasp == 2:
-            cbuf.append("selectMore $ctl_t2_y")
+            cbuf.append("selectMore $ctl_t2_z")
         s = "at time %s animate on move $ [0, 0, 0]" % t6fstart
         cbuf.append(s)
-        s = "at time %s animate on move $ [0, 0, %s]" % (t6fend, appoggio)
+        s = "at time %s animate on move $ [0, 0, %s]" % (t6fend, appoggio - 22)  # correzione anche qui
         cbuf.append(s)
 
         # eventuale spostamento del vassoio

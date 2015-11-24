@@ -1,6 +1,6 @@
 class PosaFerri(object):
     def __init__(self, risoluzione, numeroferri):
-        self.optime = 2.0  # tempo in secondi dell'operazione
+        self.optime = 1.5  # tempo in secondi dell'operazione
         self.risoluzione = risoluzione  # distanza tra un ferro e l'altro
         self.numeroferri = numeroferri  # numero dei ferri in un settore
 
@@ -15,12 +15,12 @@ class PosaFerri(object):
         cbuf = []
         cframe = framestart
         framemovimentocatenaria = int((self.optime - 1) * fps) - 1
-        framemovimentoferri = int(fps - 1)
+        framemovimentoferri = int(fps - 13)
 
         # settaggio dei pivot delle sbarre per la rotazione
 
         for i in range(0, self.numeroferri):
-            pivy = 850 + self.risoluzione * (20 - i)
+            pivy = 850 + self.risoluzione * (20 - i) - 12.5  # Correzione hardcoded di 12.5 per animazione finale
             s = "$sbarra_%s_%s.pivot = [150, %s, 102]" % (settore, (i + 1), pivy)
             cbuf.append(s)
 
@@ -36,8 +36,13 @@ class PosaFerri(object):
             s = "at time %s animate on move $ [0, 0, 0]" % cframe
             cbuf.append(s)
             cframe += framemovimentocatenaria
-            s = "at time %s animate on move $ [0, -%s, 0]" % (cframe, self.risoluzione)
+            s = "at time %s animate on move $ [0, -%s, 0]" % ((cframe - 1), self.risoluzione)
             cbuf.append(s)
+            cbuf.append("maxOps.setDefaultTangentType #step #step")
+            cbuf.append("select $catenaria")
+            s = "at time %s animate on move $ [0, %s, 0]" % (cframe, self.risoluzione)
+            cbuf.append(s)
+            cbuf.append("maxOps.setDefaultTangentType #slow #slow")
             cframe += 1
 
             # caduta dei ferri
@@ -49,8 +54,9 @@ class PosaFerri(object):
             cframe += framemovimentoferri
             cbuf.append("maxOps.setDefaultTangentType #slow #linear")  # il ferro si muove linear
             # s = "at time %s animate on $.position = $hlp_sbarre_origine_catenaria.position" % cframe
-            s = "at time %s animate on move $ [0, -100, -60]" % cframe
+            s = "at time %s animate on move $ [0, -72.5, - 57.2]" % cframe
             cbuf.append(s)
+            cbuf.append("clearSelection()")  # proviamo cosi'
             cframe += 1
 
         return {"tempo": (cframe - framestart), "buffer": cbuf}

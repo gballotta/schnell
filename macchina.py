@@ -57,6 +57,15 @@ class Macchina(macchinainterface.MacchinaInterface):
         # rotazione delle sbarre
         s = "rotazionesbarra = eulerangles 0 90 0"
         self.outputsetupbuf.append(s)
+        # mappatura barre
+        self.outputsetupbuf.append("mappac = Uvwmap()")
+        self.outputsetupbuf.append("mappac.maptype = 1")
+        s = "mappac.length = %s" % (self.spessoresbarra + 0.2)
+        self.outputsetupbuf.append(s)
+        s = "mappac.width = %s" % (self.spessoresbarra + 0.2)
+        self.outputsetupbuf.append(s)
+        self.outputsetupbuf.append("mappac.height = 2.4")
+        self.outputsetupbuf.append("utile = 2")
 
     def dumpasetup(self):
         """
@@ -257,23 +266,25 @@ class Macchina(macchinainterface.MacchinaInterface):
         self.timer1.currentframe = self.timer1.endframe
         print self.timer1.endframe
 
-    def scendivassoio(self):
+    def scendivassoio(self, settore):
         """
         Invia al wrapper il comando di fare scendere il vassoio
+        :param settore
         :return:
         """
-        r = self.linea.vassoiogiu(self.timer1.currentframe, self.timer1.fps)
+        r = self.linea.vassoiogiu(settore, self.timer1.currentframe, self.timer1.fps)
         self.outputfilebuf.extend(r['buffer'])
         self.timer1.endframe += (r['tempo'])
         self.timer1.currentframe = self.timer1.endframe
         print self.timer1.endframe
 
-    def salivassoio(self):
+    def salivassoio(self, settore):
         """
         Invia al wrapper il comando di fare salire il vassoio
+        :param settore
         :return:
         """
-        r = self.linea.vassoiosu(self.timer1.currentframe, self.timer1.fps)
+        r = self.linea.vassoiosu(settore, self.timer1.currentframe, self.timer1.fps)
         self.outputfilebuf.extend(r['buffer'])
         self.timer1.endframe += (r['tempo'])
         self.timer1.currentframe = self.timer1.endframe
