@@ -1,11 +1,11 @@
 class Trasportatori(object):
     def __init__(self):
         self.velocitay = 315  # velocita orizzontale dei traportatori
-        self.velocitaz = 126  # velocita verticale dei traportatori
+        self.velocitaz = 125  # velocita verticale dei traportatori
         self.tragittoy = 630  # tragitto orizzontale dei trasportatori
-        self.tragittoz = 126  # tragitto verticale dei trasportatori
+        self.tragittoz = 125  # tragitto verticale dei trasportatori
         self.temporotazione = 1  # tempo di rotazione del trasportatore 1 in secondi
-        self.velocitavassoio = 100  # velocita orizzontale del vassoio
+        self.velocitavassoio = 170.0  # velocita orizzontale del vassoio
         self.ruotatoprima = False  # flag per verificare se in precedenza c'era stata una rotazione
         self.ruotatocoeff = 0  # flag per verificare l'ultima rotazione : +1 antiorario -1 orario
 
@@ -36,7 +36,7 @@ class Trasportatori(object):
         t3fend = t3fstart + self.tragittoz / self.velocitaz * fps - 1  # frame di arrivo tragitto 3
         t3rfstart = 0
         t3rfend = t3fend  # inizializziamo queste variabili in modo da tenere lo scope nella funzione
-        if ruota == 1:
+        if ruota != 0:
             t3rfstart = t3fend + 1  # frame di partenza della rotazione
             t3rfend = t3rfstart + self.temporotazione * fps - 1  # frame di arrivo della rotazione
         t4fstart = t3rfend + 1  # frame di partenza tragitto 4 (da p1 a reset)
@@ -140,7 +140,7 @@ class Trasportatori(object):
         # correzione dell'abbassamento in caso di rotazione (i ferri finiscono un po piu' sopra)
         appoggio = self.tragittoz
         if ruota == 1:
-            appoggio = self.tragittoz - 1
+            appoggio = self.tragittoz - 2
 
         # tragitto 5 (da reset a p2 abbassato)
         cbuf.append("select $ctl_t1_z")
@@ -175,7 +175,7 @@ class Trasportatori(object):
 
         # settaggio del flag in caso di rotazione in questo trasporto
 
-        if ruota == 1:
+        if ruota != 0:
             self.ruotatoprima = True
 
         return {"tempo": (t6fend - framestart), "buffer": cbuf, "break": t4fstart}

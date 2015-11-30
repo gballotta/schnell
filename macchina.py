@@ -18,7 +18,7 @@ class Macchina(macchinainterface.MacchinaInterface):
         # parametri della simulazione
         self.numeroferri = 20  # numero di ferri massimo in un settore
         self.risoluzione = 15.0  # la risoluzione della macchina
-        self.spessoresbarra = 1.0  # lo spessore della sbarra
+        self.spessoresbarra = 2.0  # lo spessore della sbarra
         self.zonacorrente = 1  # la zona corrente di lavorazione
 
         # buffers dei files di output

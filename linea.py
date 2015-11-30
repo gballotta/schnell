@@ -2,10 +2,10 @@ class Linea(object):
     def __init__(self):
         self.velocitavassoio = 200.0  # velocita vassoio in centimetri al secondo
         self.velocitavassoiovert = 20  # velocita vassoio verticale in centimetri al secondo
-        self.tragitto_0_1 = -700  # tragitto vassoio da automatico a manuale
+        self.tragitto_0_1 = -1000  # tragitto vassoio da automatico a manuale
         self.tragitto_1_2 = -700  # tragitto da manuale a saldatori
         self.tragitto_2_3 = -70  # tragitto da saldatori a uscita
-        self.tragitto_3_4 = 2800  # tragitto di ritorno
+        self.tragitto_3_4 = 3100  # tragitto di ritorno
         self.abbassamentocarrello = 40  # abbassamento del carrello per il viaggio di ritorno
         self.velocitasaldatori = 1  # velocita dei saldatori in secondi
         self.velocitapassocarrello = 1  # tempo in secondi per lo scostamento carrello nelle saldature

@@ -39,6 +39,8 @@
       <w>centimetri</w>
       <w>cframe</w>
       <w>chiavi</w>
+      <w>cicli</w>
+      <w>ciclisaldatura</w>
       <w>ciclo</w>
       <w>cilindro</w>
       <w>cino</w>
@@ -82,6 +84,8 @@
       <w>elementi</w>
       <w>endframe</w>
       <w>esecuzione</w>
+      <w>esegue</w>
+      <w>eseguire</w>
       <w>esempio</w>
       <w>essere</w>
       <w>estrude</w>
@@ -99,9 +103,14 @@
       <w>framemovimento</w>
       <w>framemovimentocatenaria</w>
       <w>framemovimentoferri</w>
+      <w>framend</w>
       <w>framesno</w>
       <w>framestart</w>
       <w>frend</w>
+      <w>frmsaldamezzo</w>
+      <w>frmsaldatutto</w>
+      <w>frmspostamento</w>
+      <w>frmspostementocarrello</w>
       <w>frstart</w>
       <w>fstart</w>
       <w>funzionano</w>
@@ -174,6 +183,8 @@
       <w>parametri</w>
       <w>pari</w>
       <w>parte</w>
+      <w>partono</w>
+      <w>passaggioasuperiori</w>
       <w>passframes</w>
       <w>passi</w>
       <w>passseconds</w>
@@ -189,16 +200,19 @@
       <w>posabarre</w>
       <w>posaferri</w>
       <w>posare</w>
+      <w>posdispari</w>
       <w>positivo</w>
       <w>posiziona</w>
       <w>posizionamento</w>
       <w>poso</w>
+      <w>pospari</w>
       <w>posto</w>
       <w>potere</w>
       <w>precedenza</w>
       <w>presa</w>
       <w>prima</w>
       <w>proviamo</w>
+      <w>punto</w>
       <w>quella</w>
       <w>queste</w>
       <w>questo</w>
@@ -232,6 +246,7 @@
       <w>sbarra</w>
       <w>sbarre</w>
       <w>scalare</w>
+      <w>scatto</w>
       <w>scendere</w>
       <w>scendivassoio</w>
       <w>schnell</w>
@@ -259,6 +274,7 @@
       <w>singolo</w>
       <w>sinistra</w>
       <w>solamente</w>
+      <w>sono</w>
       <w>sopra</w>
       <w>speciale</w>
       <w>spero</w>
@@ -279,11 +295,17 @@
       <w>sputaferro</w>
       <w>startframe</w>
       <w>stata</w>
+      <w>subito</w>
       <w>successivo</w>
       <w>superiori</w>
+      <w>tempodispari</w>
       <w>tempoesecuzione</w>
+      <w>tempopari</w>
       <w>temporizzatore</w>
       <w>temporotazione</w>
+      <w>temposaldatura</w>
+      <w>temposcatto</w>
+      <w>tempotraslazioney</w>
       <w>tenere</w>
       <w>tmezzasaldatura</w>
       <w>tmovend</w>
@@ -298,6 +320,8 @@
       <w>traportatori</w>
       <w>traslazione</w>
       <w>traslazionesaldatori</w>
+      <w>traslazioney</w>
+      <w>traslazionez</w>
       <w>trasporta</w>
       <w>trasportabarre</w>
       <w>trasportare</w>
